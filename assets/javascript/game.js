@@ -61,7 +61,7 @@ $("#losses").append("Losses: " + losses);
 
 $(".crystal").on("click", function() {
 
-    var crystalWorthRando = $(this).attr("crystalvalue");
+    var crystalWorthRando = $(this).attr("crystalworth");
 
     crystalWorthRando = parseInt(crystalWorthRando);
 
@@ -75,13 +75,14 @@ $(".crystal").on("click", function() {
         wins++;
         $("#wins")
             .empty()
-            .append(wins);
+            .append("Wins: " + wins);
         reset();
+
     }   else if (total > magicNumber) {
         losses++;
-        $("#losees")
+        $("#losses")
             .empty()
-            ,append(losses);
+            .append("Losses: " + losses);
         reset();
     }
     });
