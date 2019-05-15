@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
 //=============================================================================
 //================================VARIABLES====================================
 
@@ -49,7 +50,40 @@ function reset() {
     crystal3.attr("crystalworth", crystalWorth[2]);
     crystal4.attr("crystalworth", crystalWorth[3]);
     }
+
 reset();
 
 //=============================================================================
+//================================MAIN GAME====================================
+
+$("#wins").append("Wins:" + wins);
+$("#losses").append("Losses: " + losses);
+
+$(".crystal").on("click", function() {
+
+    var crystalWorthRando = $(this).attr("crystalvalue");
+
+    crystalWorthRando = parseInt(crystalWorthRando);
+
+    total = total += crystalWorthRando;
+
+    $("#total")
+        .empty()
+        .append(total);
+    
+    if (total == magicNumber) {
+        wins++;
+        $("#wins")
+            .empty()
+            .append(wins);
+        reset();
+    }   else if (total > magicNumber) {
+        losses++;
+        $("#losees")
+            .empty()
+            ,append(losses);
+        reset();
+    }
+    });
 });
+
