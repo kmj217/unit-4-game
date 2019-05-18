@@ -55,6 +55,11 @@ reset();
 $("#wins").html("Wins: " + wins);
 $("#losses").html("Losses: " + losses);
 
+$("body").keyup(function() {
+    $("#game").show()
+    $("#instructions").css("display", "none")
+})
+
 $(".crystal").on("click", function() {
 
     var crystalWorthRando = $(this).attr("crystalworth");
@@ -79,4 +84,3 @@ $(".crystal").on("click", function() {
     }
     });
 });
-
