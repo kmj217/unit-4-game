@@ -34,7 +34,7 @@ function reset() {
     $("#total").html(total);
 
     magicNumber = [Math.floor(Math.random() * (129 - 19 + 1) + 19)];
-    $("#magicNumber").html(magicNumber);
+    $("#magicNumber").html("The Magic Number is " + magicNumber);
     
     crystalWorth[0] = [Math.floor(Math.random() * (12 - 1 + 1) + 1)];
     crystalWorth[1] = [Math.floor(Math.random() * (12 - 1 + 1) + 1)];
@@ -63,16 +63,18 @@ $(".crystal").on("click", function() {
 
     total = total += crystalWorthRando;
 
-    $("#total").html(total);
+    $("#total").html("You've collected  " + total + " crystals!");
     
     if (total == magicNumber) {
         wins++;
         $("#wins").html("Wins: " + wins);
+        alert("Congratulations! You won! Select a crytal to play again.");
         reset();
 
     }   else if (total > magicNumber) {
         losses++;
         $("#losses").html("Losses: " + losses);
+        alert("Oh, too bad. You lose. Select a crytal to play again.");
         reset();
     }
     });
