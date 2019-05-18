@@ -1,0 +1,11 @@
+body {
+    background-image: url(../images/background.png);
+    font-family: 'Cinzel', serif;
+}
+
+#title {
+    text-align: center;
+    margin: auto;
+    font-size: 3em;
+    padding: 20px
+}
