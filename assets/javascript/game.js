@@ -19,7 +19,7 @@ var total;
 var crystal1 = $("#crystal1");
 var crystal2 = $("#crystal2");
 var crystal3 = $("#crystal3");
-var crystal4 = $("#crystal3");
+var crystal4 = $("#crystal4");
 
 //variable for attribute of crystal worth
 var crystalWorth = [];
@@ -31,14 +31,10 @@ var crystalWorth = [];
 
 function reset() {
     total = 0;
-    $("#total")
-        .empty()
-        .append(total);
+    $("#total").html(total);
 
     magicNumber = [Math.floor(Math.random() * (129 - 19 + 1) + 19)];
-    $("#magicNumber")
-        .empty()
-        .append(magicNumber);
+    $("#magicNumber").html(magicNumber);
     
     crystalWorth[0] = [Math.floor(Math.random() * (12 - 1 + 1) + 1)];
     crystalWorth[1] = [Math.floor(Math.random() * (12 - 1 + 1) + 1)];
@@ -56,8 +52,8 @@ reset();
 //=============================================================================
 //================================MAIN GAME====================================
 
-$("#wins").append("Wins:" + wins);
-$("#losses").append("Losses: " + losses);
+$("#wins").html("Wins: " + wins);
+$("#losses").html("Losses: " + losses);
 
 $(".crystal").on("click", function() {
 
@@ -67,22 +63,16 @@ $(".crystal").on("click", function() {
 
     total = total += crystalWorthRando;
 
-    $("#total")
-        .empty()
-        .append(total);
+    $("#total").html(total);
     
     if (total == magicNumber) {
         wins++;
-        $("#wins")
-            .empty()
-            .append("Wins: " + wins);
+        $("#wins").html("Wins: " + wins);
         reset();
 
     }   else if (total > magicNumber) {
         losses++;
-        $("#losses")
-            .empty()
-            .append("Losses: " + losses);
+        $("#losses").html("Losses: " + losses);
         reset();
     }
     });
