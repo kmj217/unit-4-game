@@ -73,13 +73,13 @@ $(".crystal").on("click", function() {
     if (total == magicNumber) {
         wins++;
         $("#wins").html("Wins: " + wins);
-        alert("Congratulations! You won! Select a crytal to play again.");
+        alert("Congratulations! You won! Select a crystal to play again.");
         reset();
 
     }   else if (total > magicNumber) {
         losses++;
         $("#losses").html("Losses: " + losses);
-        alert("Oh, too bad. You lose. Select a crytal to play again.");
+        alert("Oh, too bad. You lose. Select a crystal to play again.");
         reset();
     }
     });
